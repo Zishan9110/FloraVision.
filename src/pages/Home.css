@@ -1,0 +1,364 @@
+.home {
+  min-height: 100vh;
+}
+/* Wrapper jo hero + trendy dono ko cover kare */
+.hero-trendy-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-trendy-wrapper::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('../assets/second.png'); /* ya bg.png */
+  background-size: cover;
+  background-position: center 20%;
+  opacity: 0.5;
+  filter: brightness(0.5) saturate(1.2);
+  z-index: 0;
+}
+
+.hero-trendy-wrapper::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  /* background:
+    linear-gradient(to right,  rgba(8,18,8,0.85) 0%, rgba(8,18,8,0.0) 40%),
+    linear-gradient(to left,   rgba(8,18,8,0.65) 0%, rgba(8,18,8,0.0) 40%),
+    linear-gradient(to top,    rgba(8,18,8,0.98) 0%, rgba(8,18,8,0.0) 35%),
+    linear-gradient(to bottom, rgba(8,18,8,0.98) 0%, rgba(8,18,8,0.0) 35%); */
+    /* background: rgb(21, 37, 21); */
+  pointer-events: none;
+}
+
+/* Generic section wrapper */
+.section {
+  padding: 80px 40px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* ── TRENDY PLANTS ── */
+.trendy-section {
+  padding-top: 60px;
+}
+
+.trendy-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.trendy-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  background: linear-gradient(145deg, rgba(255,255,255,0.09) 0%, rgba(255,255,255,0.03) 100%);
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 100px;
+  overflow: hidden;
+  min-height: 320px;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.12);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  position: relative;
+}
+
+.trendy-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.trendy-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 56px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.18);
+  border-color: rgba(255,255,255,0.22);
+}
+
+.trendy-card--left .trendy-card-image {
+  order: 1;
+}
+.trendy-card--left .trendy-card-content {
+  order: 2;
+}
+.trendy-card--right .trendy-card-image {
+  order: 2;
+}
+.trendy-card--right .trendy-card-content {
+  order: 1;
+}
+
+.trendy-card-image {
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background: rgba(255,255,255,0.02);
+}
+
+.trendy-card-image img {
+  height: 190px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 24px rgba(0,0,0,0.5));
+  transition: transform 0.3s ease;
+}
+
+.trendy-card:hover .trendy-card-image img {
+  transform: scale(1.06);
+}
+
+.trendy-card-content {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.trendy-card-content h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.3;
+}
+
+.trendy-card-content p {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.trendy-price {
+  font-size: 20px;
+  font-weight: 800;
+  color: #ffffff;
+  display: block;
+}
+
+.trendy-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.cart-icon-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.cart-icon-btn:hover {
+  background: rgba(255,255,255,0.14);
+}
+
+/* ── TOP SELLING ── */
+.top-selling-section {
+  background: transparent;
+}
+
+.plants-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+/* ── REVIEWS ── */
+.reviews-section {
+  background: transparent;
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+/* ── O2 SECTION ── */
+.o2-section {
+  padding-bottom: 100px;
+}
+
+.o2-card {
+  background: linear-gradient(145deg, rgba(255,255,255,0.09) 0%, rgba(255,255,255,0.03) 100%);
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  min-height: 340px;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 8px 40px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.12);
+  position: relative;
+}
+
+.o2-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* The slider fills the card */
+.o2-slider {
+  width: 100%;
+  height: 100%;
+}
+
+/* Each slide is a 2-column grid matching original layout */
+.o2-slide {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  min-height: 340px;
+}
+
+.o2-card-image {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 0 20px;
+  background: rgba(255,255,255,0.02);
+}
+
+.o2-card-image img {
+  height: 300px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 12px 40px rgba(0,0,0,0.6));
+}
+
+.o2-card-content {
+  padding: 48px 48px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  justify-content: center;
+}
+
+.o2-card-content h3 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.3;
+}
+
+.o2-card-content p {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+/* Dots from Slider are positioned at bottom of content area */
+.o2-slider .slider-dots {
+  position: absolute;
+  bottom: 28px;
+  right: 48px;
+  z-index: 5;
+}
+
+/* O2 nav arrows overlaid on card */
+.o2-slider .slider-arrow--prev {
+  left: auto;
+  right: 100px;
+  bottom: 20px;
+  top: auto;
+  transform: none;
+}
+
+.o2-slider .slider-arrow--next {
+  right: 56px;
+  bottom: 20px;
+  top: auto;
+  transform: none;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .plants-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .reviews-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 60px 20px;
+  }
+
+  .trendy-card {
+    grid-template-columns: 1fr;
+  }
+
+  .trendy-card--right .trendy-card-image {
+    order: 1;
+  }
+  .trendy-card--right .trendy-card-content {
+    order: 2;
+  }
+
+  .trendy-card-image {
+    height: 200px;
+  }
+
+  .trendy-card-content {
+    padding: 24px;
+  }
+
+  .plants-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .reviews-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .o2-card {
+    min-height: 0;
+  }
+
+  .o2-slide {
+    grid-template-columns: 1fr;
+  }
+
+  .o2-card-image {
+    height: 200px;
+  }
+
+  .o2-card-content {
+    padding: 28px 24px 60px;
+  }
+
+  .o2-slider .slider-dots {
+    right: 50%;
+    transform: translateX(50%);
+    bottom: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .trendy-card-content h3 {
+    font-size: 17px;
+  }
+}

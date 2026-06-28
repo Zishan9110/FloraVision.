@@ -1,0 +1,61 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 22px;
+  font-size: 13px;
+  font-weight: 500;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  cursor: pointer;
+  border: none;
+  font-family: var(--font);
+}
+
+.btn-primary {
+  background-color: #ffffff;
+  color: #0f1a0f;
+}
+
+.btn-primary:hover {
+  background-color: #e8f5e8;
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: #ffffff;
+  border: 1.5px solid rgba(255,255,255,0.3);
+}
+
+.btn-secondary:hover {
+  border-color: rgba(255,255,255,0.6);
+  background-color: rgba(255,255,255,0.05);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: #ffffff;
+  border: 1.5px solid rgba(255,255,255,0.4);
+  padding: 8px 18px;
+  font-size: 13px;
+}
+
+.btn-outline:hover {
+  background-color: rgba(255,255,255,0.08);
+}
+
+.btn-subscribe {
+  background-color: #4caf50;
+  color: #ffffff;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.btn-subscribe:hover {
+  background-color: #43a047;
+}

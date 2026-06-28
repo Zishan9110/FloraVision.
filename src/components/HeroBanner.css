@@ -1,0 +1,436 @@
+/* ============================================
+   HERO BANNER - COMPLETE CSS
+   Image sabse upar, curve ke saath overflow
+   ============================================ */
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  padding: 0 40px 80px;
+  /* overflow: hidden; */ /* COMMENTED - important */
+  background: #0d1a0d;
+}
+
+/* ============================================
+   BACKGROUND BUSH IMAGE
+   ============================================ */
+.hero-bg-image {
+  position: absolute;
+  /* top: -125px;
+  left: -200px; */
+  /* width: 1728px;
+  height: 2592px; */
+  z-index: 0;
+  pointer-events: none;
+}
+
+.hero-bg-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  opacity: 0.6;
+  filter: brightness(0.5) saturate(1.2);
+}
+
+/* ============================================
+   OVERLAY GRADIENTS
+   ============================================ */
+.hero-bg-overlay {
+  /* position: absolute;
+  inset: 0; */
+  /* z-index: 1; */
+  pointer-events: none;
+  /* background:
+    linear-gradient(to right,  rgba(8,18,8,0.88) 0%, rgba(8,18,8,0.0) 42%),
+    linear-gradient(to left,   rgba(8,18,8,0.70) 0%, rgba(8,18,8,0.0) 42%),
+    linear-gradient(to bottom, rgba(8,18,8,0.55) 0%, rgba(8,18,8,0.0) 28%),
+    linear-gradient(to top,    rgba(8,18,8,0.98) 0%, rgba(8,18,8,0.0) 38%); */
+    background: rgb(11, 26, 11);
+}
+
+/* ============================================
+   INNER 2-COL GRID
+   ============================================ */
+.hero-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 290px;
+  gap: 60px;
+  align-items: center;
+  min-height: 100vh;
+  padding-top: 80px;
+  position: relative;
+  z-index: 2;
+}
+
+/* ============================================
+   LEFT - CONTENT
+   ============================================ */
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.hero-title {
+  font-size: clamp(40px, 5vw, 64px);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -1px;
+  color: #ffffff;
+}
+
+.hero-desc {
+  font-size: 14px;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.6;
+  max-width: 360px;
+}
+
+.hero-cta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 4px;
+}
+
+.btn-play {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.75);
+  font-size: 13px;
+  cursor: pointer;
+  font-family: var(--font);
+  transition: color 0.2s;
+}
+.btn-play:hover { color: #fff; }
+
+.play-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255,255,255,0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  flex-shrink: 0;
+  transition: border-color 0.2s;
+}
+.btn-play:hover .play-icon { border-color: rgba(255,255,255,0.7); }
+
+/* ============================================
+   TESTIMONIAL GLASS CARD
+   ============================================ */
+.hero-testimonial {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0.04) 100%);
+  border: 1px solid rgba(255,255,255,0.16);
+  border-radius: 14px;
+  padding: 16px;
+  max-width: 310px;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.14);
+  margin-top: 12px;
+  position: relative;
+  overflow: hidden;
+}
+.hero-testimonial::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.06) 0%, transparent 55%);
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+.ht-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 13px;
+  color: #fff;
+  flex-shrink: 0;
+}
+.ht-content { flex: 1; }
+.ht-name-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 5px;
+}
+.ht-name { font-size: 13px; font-weight: 600; color: #fff; }
+.ht-stars { font-size: 10px; color: #d4a843; letter-spacing: 1px; }
+.ht-text { font-size: 12px; color: rgba(255,255,255,0.6); line-height: 1.5; }
+
+/* ============================================
+   RIGHT - GLASS CARD (with curve on top)
+   ============================================ */
+.hero-featured-card {
+  position: relative;
+  align-self: center;
+  
+  /* Dark glass — matches screenshot perfectly */
+  /* background: rgba(20, 38, 20, 0.52); */
+  border: 1px solid rgba(255, 255, 255, 0.402);
+  border-top: none;  
+  border-radius: 50px;
+  
+  /* top padding = room for floating plant image */
+  padding: 150px 35px 90px;
+  padding-bottom: 30px;
+  padding-top: 240px;
+
+  /* backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  box-shadow:
+    0 32px 80px rgba(0,0,0,0.7),
+    inset 0 1px 0 rgba(255,255,255,0.10);  */
+
+  /* ⭐ MUST be visible so plant can overflow above */
+  overflow: hidden;
+}
+
+/* ============================================
+   ⭐ CURVE ON TOP (exact jaise screenshot mein)
+   ============================================ */
+.hero-featured-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 65px;
+  /* background: rgba(20, 38, 20, 0.52);   */
+  
+  border-radius: 50px 50px 50% 50% / 0 0 50px 50px;
+  /* 
+     ye curve neeche ki taraf banayega
+     50% 50% / 0 0 30px 30px 
+     => top pe straight, bottom pe curve
+  */
+  z-index: 1;
+  pointer-events: none;
+  backdrop-filter: blur(100px);
+  -webkit-backdrop-filter: blur(50px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.502);
+}
+
+/* ============================================
+   SLIDER WRAPPER
+   ============================================ */
+.hfc-slider {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  overflow: visible !important;  /* ⭐ Image bahar dikhe */
+}
+
+.hfc-slide {
+  display: flex;
+  flex-direction: column;
+  overflow: visible !important;  /* ⭐ Image bahar dikhe */
+}
+
+/* ============================================
+   ⭐ PLANT IMAGE - SABSE UPAR + OVERFLOW ⭐
+   ============================================ */
+.hfc-image {
+  position: absolute;
+  top: -240px;  /* ⭐ image ko aur upar kiya - curve se overflow */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 280px;
+  height: 260px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 9999 !important;      /* ⭐ SABSE UPAR */
+}
+
+.hfc-image img {
+  width: 260px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 28px 50px rgba(0,0,0,0.85));
+  transition: transform 0.4s ease;
+  position: relative;
+  z-index: 9999 !important;      /* ⭐ IMAGE BHI UPAR */
+  display: block;
+  /* ⭐ image ko aur upar karne ke liye */
+  margin-top: -20px;
+}
+.hfc-image img:hover {
+  transform: scale(1.03) translateY(-4px);
+}
+
+/* ============================================
+   CARD TEXT CONTENT
+   ============================================ */
+.hfc-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  position: relative;
+  z-index: 2;                    /* ⭐ Image ke neeche */
+}
+
+.hfc-tag {
+  font-size: 12px;
+  color: rgba(255,255,255,0.45);
+  letter-spacing: 0.3px;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.hfc-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.hfc-title-row h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: -0.3px;
+  margin: 0;
+}
+
+.hfc-arrow {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: #fff;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+  padding: 0;
+  flex-shrink: 0;
+  line-height: 1;
+}
+.hfc-arrow:hover { background: rgba(255,255,255,0.18); }
+
+/* ============================================
+   BUY NOW - OUTLINED
+   ============================================ */
+.hfc-buy-btn {
+  width: 40%;
+  padding: 13px 0;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 12px;
+  background: transparent;
+  color: #ffffff;
+  border: 1.5px solid rgba(255,255,255,0.50);
+  cursor: pointer;
+  font-family: var(--font);
+  letter-spacing: 0.2px;
+  transition: all 0.22s ease;
+}
+.hfc-buy-btn:hover {
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(255,255,255,0.75);
+}
+
+/* ============================================
+   SLIDER DOTS
+   ============================================ */
+.hfc-slider .slider-dots {
+  display: flex;
+  gap: 7px;
+  justify-content: center;
+  margin-top: 18px;
+}
+
+.hfc-slider .slider-dots .slider-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.28);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.3s ease;
+}
+.hfc-slider .slider-dots .slider-dot.active {
+  background: rgba(255,255,255,0.85);
+  width: 20px;
+  border-radius: 4px;
+}
+.hfc-slider .slider-dots .slider-dot:hover {
+  background: rgba(255,255,255,0.55);
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 1024px) {
+  .hero-inner {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero { padding: 0 20px 60px; }
+  .hero-inner {
+    grid-template-columns: 1fr;
+    gap: 60px;
+    padding-top: 100px;
+  }
+  .hero-featured-card {
+    max-width: 290px;
+    margin: 120px auto 0;
+  }
+  .hero-testimonial { max-width: 100%; }
+}
+
+@media (max-width: 480px) {
+  .hero-featured-card {
+    padding: 100px 16px 20px;
+  }
+  .hfc-image {
+    top: -110px;
+    width: 220px;
+    height: 180px;
+  }
+  .hfc-image img { 
+    width: 210px;
+    margin-top: -15px;
+  }
+  .hfc-title-row h3 { font-size: 17px; }
+}
+
+/* ============================================
+   ⭐ EXTRA SAFETY - AGAR KOI OVERLAY COVER KAR RAHA HAI ⭐
+   ============================================ */
+.hero-featured-card::after {
+  display: none !important;    /* Pseudo elements hatado */
+}
+
+/* Slider ke andar koi bhi overflow hidden na ho */
+.hfc-slider,
+.hfc-slide,
+.hfc-slider * {
+  overflow: visible !important;
+}

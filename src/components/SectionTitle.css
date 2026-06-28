@@ -1,0 +1,26 @@
+.section-title {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.st-heading {
+  font-size: clamp(22px, 3vw, 32px);
+  font-weight: 700;
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  letter-spacing: -0.3px;
+}
+
+.st-bracket {
+  color: rgba(255,255,255,0.25);
+  font-weight: 300;
+  font-size: 0.9em;
+}
+
+.st-sub {
+  color: var(--text-secondary);
+  font-size: 14px;
+  margin-top: 10px;
+}
